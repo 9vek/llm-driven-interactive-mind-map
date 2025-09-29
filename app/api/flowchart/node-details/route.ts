@@ -16,7 +16,7 @@ export async function POST(req: Request) {
 
     Requirements:
     - Faithfully extract only the knowledge relevant to this node.
-    - Ensure that the extracted section is complete and self-contained.
+    - Ensure that the extracted section is 100% complete (all relevant things from the material are included) and self-contained, including cide blocks, lists, and tables.
     - Do not include any other sections or content in the original learning material that is not relevant to the node.
     - Do not add any additional information or commentary.
     `,
