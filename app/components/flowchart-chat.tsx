@@ -13,7 +13,7 @@ interface FlowchartChatProps {
   onClose: () => void;
 }
 
-export function FlowchartChat({ nodeName, nodeDetails, isOpen, onClose }: FlowchartChatProps) {
+export function FlowchartChat({ nodeName, nodeDetails, isOpen }: FlowchartChatProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [input, setInput] = useState('');
   const [voiceEnabled, setVoiceEnabled] = useState(true);
@@ -130,7 +130,7 @@ export function FlowchartChat({ nodeName, nodeDetails, isOpen, onClose }: Flowch
             </div>
             <h4 className="text-lg font-medium text-gray-800 mb-2">Welcome to the Learning Assistant!</h4>
             <p className="text-gray-600 text-sm">
-              I'm here to help you understand the flowchart concepts and answer your questions.
+              I&apos;m here to help you understand the flowchart concepts and answer your questions.
               {nodeName && ` I have context about "${nodeName}" and can help explain it in detail.`}
             </p>
           </div>

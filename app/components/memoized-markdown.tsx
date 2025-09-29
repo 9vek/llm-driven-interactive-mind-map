@@ -17,7 +17,7 @@ const MemoizedMarkdownBlock = memo(
         const match = /language-(\w+)/.exec(className || '');
         return match ? (
           <SyntaxHighlighter
-            style={oneLight as any}
+            style={oneLight}
             language={match[1]}
             PreTag="div"
           >

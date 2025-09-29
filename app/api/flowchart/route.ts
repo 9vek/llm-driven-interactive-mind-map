@@ -5,7 +5,7 @@ import { topic } from './sampleLearningMaterial';
 
 export const maxDuration = 30;
 
-export async function POST(req: Request) {
+export async function POST() {
 
   const result = streamObject({
     model: openai('gpt-4o'),

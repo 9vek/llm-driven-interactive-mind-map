@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { ReactFlow, Node, Edge, NodeMouseHandler, ReactFlowInstance } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { useCompletion } from '@ai-sdk/react';
@@ -296,7 +296,7 @@ export default function HomePage() {
     };
 
     const generateNodeDetails = () => {
-        const nodeName = (selectedNode?.data as any)?.label || selectedNode?.id;
+        const nodeName = (selectedNode?.data as { label?: string })?.label || selectedNode?.id;
         complete('', { body: { nodeName } });
     };
 
@@ -308,7 +308,7 @@ export default function HomePage() {
         setViewMode('chat');
     };
 
-    const nodeName = selectedNode ? (selectedNode.data as any)?.label || selectedNode.id : 'ADHD-friendly Interactive Mind Map Demo';
+    const nodeName = selectedNode ? (selectedNode.data as { label?: string })?.label || selectedNode.id : 'ADHD-friendly Interactive Mind Map Demo';
 
     return (
         <div className='w-full h-screen bg-stone-50 flex'>

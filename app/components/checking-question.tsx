@@ -26,7 +26,7 @@ export const CheckingQuestion = ({ nodeName, nodeDetails }: CheckingQuestionProp
     schema: checkingQuestionSchema,
   });
 
-  const { completion, input, setInput, handleSubmit } = useCompletion({
+  const { completion, setInput, handleSubmit } = useCompletion({
     api: '/api/challenges/explanation',
     streamProtocol: 'text',
   });
