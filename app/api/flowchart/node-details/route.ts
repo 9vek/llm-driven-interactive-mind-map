@@ -9,27 +9,16 @@ export async function POST(req: Request) {
   const result = streamText({
     model: openai('gpt-4o'),
     prompt: `
-    You are a learning coach creating concise, ADHD-friendly explanations for one mind map node.
+    Your task is to extract detailed relevant section from the full learning material based on the given one mind map node.
 
-    Node Name: ${nodeName}
-    Learning Material: ${topic}
+    The Node's Name: ${nodeName}
+    Full Learning Content: ${topic}
 
-    Task:
+    Requirements:
     - Faithfully extract only the knowledge relevant to this node.
-    - Write in short, simple sentences. Prefer concrete examples or mini analogies.
-    - Keep it focused and scannable, around 5–9 short lines.
-
-    Structure in markdown (no outer code block):
-    - One-sentence purpose of the node
-    - Key idea 1 (one line)
-    - Key idea 2 (one line)
-    - Tiny example (one or two lines)
-    - Common mistake or tip (one line)
-    - Why it matters next (one line)
-
-    Rules:
-    - Do not quote the material verbatim.
-    - No headings, tables, or code blocks; use plain markdown lines only.
+    - Ensure that the extracted section is complete and self-contained.
+    - Do not include any other sections or content in the original learning material that is not relevant to the node.
+    - Do not add any additional information or commentary.
     `,
   });
   
